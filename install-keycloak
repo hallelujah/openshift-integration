@@ -25,7 +25,7 @@ oc new-app -f keycloak-https.json \
     -p KEYCLOAK_USER=admin \
     -p KEYCLOAK_PASSWORD=admin
 
-oc volume dc/keycloak --add --name keycloak-data --claim-size=1G --overwrite
+oc set volume dc/keycloak --add --name keycloak-data --claim-size=1G --overwrite
 
 echo "Waiting for Keycloak to start"
 
